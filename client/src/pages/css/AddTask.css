@@ -1,0 +1,48 @@
+*{
+
+margin:0;
+padding:0;
+
+}
+
+.formInput{
+
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    margin: auto;
+}
+
+.inputTitle{
+
+    padding: 0.5em;
+    border-radius:10px;
+    font-size: 1.5rem;
+    border-color: #06a59d;
+}
+
+.inputDescription{
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border-radius:10px;
+    font-size: 1rem;
+    border-color: #06a59d;
+
+}
+
+.submitButton{
+
+    padding:0.5em;
+    border:none;
+    background-color: #06a59d;
+    color:white;
+    border-radius: 10px;
+
+}
+
+.submitButton:hover{
+
+    background-color: #19dbd2;
+    
+
+}
