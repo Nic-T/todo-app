@@ -1,12 +1,11 @@
-const express = require("express")
+const express = require("express");
 const app = express();
 const cors = require("cors");
-const pool = require("./db")
+const pool = require("./db");
 
 //middleware
 app.use(cors());
 app.use(express.json());
-
 
 
 // create todo
@@ -16,7 +15,8 @@ app.post("/todos", async(req, res) =>{
     try {
         
         const { description } =req.body;
-        const newTodo = await pool.query("INSERT INTO todo (description) VALUES ($1) RETURNING *", [description]);
+        const { title } = req.body;
+        const newTodo = await pool.query("INSERT INTO todo (description,title) VALUES ($1,$2) RETURNING *", [description,title]);
         res.json(newTodo.rows[0]);
     } catch (err) {
         console.error(err.message);
@@ -58,9 +58,10 @@ app.get("/todos/:id", async (req, res) => {
 app.put("/todos/:id", async(req,res) =>{
 
     try {
-        const {id} =req.params;
-        const {description} = req.body;
-        const updateTodo = await pool.query("UPDATE todo SET description = $1 WHERE todo_id =$2", [description, id]);
+        const { id } =req.params;
+        const { title } = req.body;
+        const { description } = req.body;
+        const updateTodo = await pool.query("UPDATE todo SET description = $1, title = $2 WHERE todo_id =$3", [description, title, id]);
 
         res.json("Todo was updated!");
     } catch (error) {
