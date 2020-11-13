@@ -22,6 +22,8 @@ function AddTask(){
             console.error(err.message)
         }
 
+        setTitle("");
+        setDescription("");
 
     }
 
@@ -29,7 +31,7 @@ function AddTask(){
 
         <Fragment>
             
-            <form className="formInput" onSubmit={onSubmitForm}>
+            <form className="formInput" name="appForm" onSubmit={onSubmitForm}>
 
                 <input name="title" type="text" className="inputTitle" placeholder="Title" value={title} onChange={e=> setTitle(e.target.value)}/>
 
