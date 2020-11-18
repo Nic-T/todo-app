@@ -1,6 +1,6 @@
 import './App.css';
 import { Fragment } from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import Header from './components/Header';
 import AddTask from './pages/AddTask';
@@ -25,13 +25,12 @@ function App() {
         
 
         </Switch>
-
+      
       </Router>
 
     
 
-    
-
+      
 
     </Fragment>
     
