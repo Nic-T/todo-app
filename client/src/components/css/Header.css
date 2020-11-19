@@ -27,9 +27,14 @@
     border:0;
     padding:0.5em;
     border-radius: 10px;
-    margin-bottom:3em;
+    
 }
 
+.menuLink{
+
+    margin-bottom:2em;
+
+}
 .menuButton:hover{
 
     background-color: #19dbd2;
